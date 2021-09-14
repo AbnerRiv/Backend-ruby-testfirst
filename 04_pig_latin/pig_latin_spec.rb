@@ -65,8 +65,23 @@ describe "#translate" do
     expect(s).to eq("ethay ickquay ownbray oxfay")
   end
 
+  it "Capitalized many words" do
+    s = translate("The Gray Graceful Lion in the Savanna")
+    expect(s).to eq("Ethay Aygray Acefulgray Ionlay inay ethay Avannasay")
+  end
+
+  it "Capitalized many words with punctuation" do
+    s = translate("The Graceful penguin, Edward!")
+    expect(s).to eq("Ethay Acefulgray enguinpay, Edwarday!")
+  end
+
+  it "Capitalized many words with complex punctuation" do
+    s = translate("The Graceful penguin said, \"You are always welcome here, Hector! However, Chan said, 'Do not worry, people'\"")
+    expect(s).to eq("Ethay Acefulgray enguinpay aidsay, \"Ouyay areay alwaysay elcomeway erehay, Ectorhay! Oweverhay, Anchay aidsay, 'Oday otnay orryway, eoplepay'\"")
+  end
+
   # Test-driving bonus:
-  # * write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
-  # * retain the punctuation from the original phrase
+  # (done) write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
+  # (done) retain the punctuation from the original phrase
 
 end
